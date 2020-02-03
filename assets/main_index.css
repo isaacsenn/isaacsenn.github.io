@@ -1,0 +1,24 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#test {
+	height: 300px;
+	width: 100%;
+	background-color: #D46A6A;
+}
+
+h1 {
+	float: left;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	float: right;
+	padding-top: 10px;
+	padding-right: 25px;
+}
