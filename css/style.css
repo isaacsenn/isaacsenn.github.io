@@ -35,6 +35,8 @@ body {
 	font-weight: 400;
 	background-color: #f6fbff;
 	color: #7d7789;
+	text-align: justify;
+	text-justify: inter-word;
 }
 svg {
 	fill: currentcolor;
@@ -666,82 +668,9 @@ h6 {font-size: 16px;}
 	height: auto;
 	clear: both;
 	float: left;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 35px;
 }
-.cavani_tm_about .biography .left {
-	width: 100%;
-}
-.cavani_tm_about .biography .left p {
-	margin-bottom: 15px;
-}
-.cavani_tm_about .biography .left p:last-child {
-	margin-bottom: 0px;
-}
-.cavani_tm_about .partners {
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	margin-bottom: 92px;
-}
-.cavani_tm_about .partners .list {
-	width: 100%;
-    float: left;
-    clear: both;
-    overflow: hidden;
-    border: 2px solid #E5EDF4;
-	margin-top: 62px;
-}
-.cavani_tm_about .partners .list ul {
-	margin: -2px -10px -2px -2px;
-    list-style-type: none;
-    padding-top: 2px;
-    float: left;
-    padding-left: 2px;
-    min-width: calc(100% + 12px);
-} 
-.cavani_tm_about .partners .list ul li {
-	margin: 0px;
-    float: left;
-    width: 25%;
-    border: 2px solid #E5EDF4;
-    text-align: center;
-    height: 130px;
-    line-height: 130px;
-    position: relative;
-    margin-top: -2px;
-    margin-left: -2px;
-    overflow: hidden;
-} 
-.cavani_tm_about .partners .list ul li img {
-	max-width: 65%;
-    max-height: 65px;
-} 
-.cavani_tm_about .partners .list ul li .list_inner {
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	opacity: .5;
-	
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-ms-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
-}
-.cavani_tm_about .partners .list ul li .list_inner:hover {
-	opacity: 1;
-}
-.cavani_tm_full_link {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	z-index: 5;
+.cavani_tm_about .biography .wrapper p {
+	margin-bottom: 10px;
 }
 
 /*---------------------------------------------------*/
@@ -755,6 +684,16 @@ h6 {font-size: 16px;}
 	float: left;
 	margin-bottom: 70px;
 }
+.cavani_tm_portfolio * .wrapper .heading {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	margin-top: 10px;
+}
+.cavani_tm_portfolio * .wrapper p:last-child {
+	margin-bottom: 20px;
+}
 
 /*---------------------------------------------------*/
 /*	07) CONTACT
@@ -765,13 +704,14 @@ h6 {font-size: 16px;}
 	height: auto;
 	clear: both;
 	float: left;
+	margin-bottom: 30px;
 }
 .cavani_tm_contact .short_info {
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
-	margin-top: 5px;
+	margin-top: -5px;
 }
 .cavani_tm_contact .short_info ul {
 	margin: 0px 0px 0px -30px;
