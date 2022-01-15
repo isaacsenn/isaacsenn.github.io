@@ -35,8 +35,6 @@ body {
 	font-weight: 400;
 	background-color: #f6fbff;
 	color: #7d7789;
-	text-align: justify;
-	text-justify: inter-word;
 }
 svg {
 	fill: currentcolor;
@@ -693,6 +691,10 @@ h6 {font-size: 16px;}
 }
 .cavani_tm_portfolio * .wrapper p:last-child {
 	margin-bottom: 20px;
+}
+.cavani_tm_portfolio * .wrapper span {
+	text-decoration: underline dotted;
+	text-decoration-thickness: 1px;
 }
 
 /*---------------------------------------------------*/
