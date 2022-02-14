@@ -680,13 +680,10 @@ h6 {font-size: 16px;}
 	height: auto;
 	clear: both;
 	float: left;
-	margin-bottom: 70px;
+	margin-bottom: 40px;
 }
 .cavani_tm_portfolio * .wrapper .heading {
 	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
 	margin-top: 10px;
 }
 .cavani_tm_portfolio * .wrapper p:last-child {
@@ -695,6 +692,10 @@ h6 {font-size: 16px;}
 .cavani_tm_portfolio * .wrapper span {
 	text-decoration: underline dotted;
 	text-decoration-thickness: 1px;
+}
+
+#resume_download {
+	margin-top: 50px;
 }
 
 /*---------------------------------------------------*/
