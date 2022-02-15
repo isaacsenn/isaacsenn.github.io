@@ -1,47 +1,23 @@
-/*
- * Copyright (c) 2021 Marketify
- * Author: Marketify
- * This file is made for CURRENT TEMPLATE
-*/
-
-
 jQuery(document).ready(function(){
 
 	"use strict";
 	
-	// here all ready functions
-	
-	cavani_tm_page_transition();
-	cavani_tm_trigger_menu();
-	cavani_tm_my_progress();
-	cavani_tm_circular_progress();
-	cavani_tm_portfolio_popup();
-	cavani_tm_news_popup();
-	cavani_tm_cursor();
-	cavani_tm_imgtosvg();
-	cavani_tm_popup();
-	cavani_tm_portfolio();
-	cavani_tm_data_images();
-	cavani_tm_contact_form();
-	cavani_tm_mycarousel();
+	page_transition();
+	trigger_menu();
+	cursor();
+	data_images();
 	hashtag();
-	cavani_tm_ripple();
 	
 	jQuery(window).load('body', function(){
-		cavani_tm_my_load();
+		init_load();
 	});
-	
 });
-
-// -----------------------------------------------------
-// ---------------   FUNCTIONS    ----------------------
-// -----------------------------------------------------
 
 // -----------------------------------------------------
 // -------------   PAGE TRANSITION    ------------------
 // -----------------------------------------------------
 
-function cavani_tm_page_transition(){
+function page_transition(){
 	
 	"use strict";
 	
@@ -82,7 +58,7 @@ function cavani_tm_page_transition(){
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function cavani_tm_trigger_menu(){
+function trigger_menu(){
 	
 	"use strict";
 
@@ -110,136 +86,11 @@ function cavani_tm_trigger_menu(){
 	});
 }
 
-// -------------------------------------------------
-// -------------  PROGRESS BAR  --------------------
-// -------------------------------------------------
-
-function cavani_tm_my_progress(){
-	
-	"use strict";
-	
-	jQuery('.progress_inner').each(function() {
-		var progress 		= jQuery(this);
-		var pValue 			= parseInt(progress.data('value'), 10);
-		var pColor			= progress.data('color');
-		var pBarWrap 		= progress.find('.bar');
-		var pBar 			= progress.find('.bar_in');
-		pBar.css({width:pValue+'%', backgroundColor:pColor});
-		setTimeout(function(){pBarWrap.addClass('open');});
-	});
-}
-
-// -----------------------------------------------------
-// ---------------   CIRCULAR PROGRESS   ---------------
-// -----------------------------------------------------
-
-function cavani_tm_circular_progress(){
-	
-	"use strict";
-	
-	var ww		= jQuery(window).width();
-	var circVal;
-	
-	if(ww > 1400){
-		circVal = 120;
-	}
-	else if(ww >= 768){
-		circVal = 100;
-	}
-	else{
-		circVal = 80;
-	}
-	
-	jQuery('.circular_progress_bar .myCircle').each(function(){
-		var element	= jQuery(this);
-		element.append('<span class="number"></span>');
-		var value	= element.data('value');
-		element.circleProgress({
-			size: circVal,
-			value: 0,
-			animation: {duration: 1400},
-			thickness: 3,
-			fill: "#7d7789",
-			emptyFill: 'rgba(0,0,0,0)',
-			startAngle: -Math.PI/2
-		  }).on('circle-animation-progress', function(event, progress, stepValue) {
-				element.find('.number').text(parseInt(stepValue.toFixed(2)*100) + '%');
-		  });
-		  element.circleProgress('value', 1.0);
-		  setTimeout(function() { element.circleProgress('value', value); }, 1400);
-	});
-}
-
-// -------------------------------------------------
-// -----------  PORTFOLIO POPUP  -------------------
-// -------------------------------------------------
-
-function cavani_tm_portfolio_popup(){
-	
-	"use strict";
-	
-	var modalBox		= jQuery('.cavani_tm_modalbox');
-	var button			= jQuery('.cavani_tm_portfolio .portfolio_popup');
-	var closePopup		= modalBox.find('.close');
-	
-	button.off().on('click',function(){
-		var element = jQuery(this);
-		var parent 	= element.closest('.list_inner');
-		var content = parent.find('.hidden_content').html();
-		var image	= parent.find('.image .main').data('img-url');
-		var details = parent.find('.details').html();
-		modalBox.addClass('opened');
-		modalBox.find('.description_wrap').html(content);
-		modalBox.find('.popup_details').prepend('<div class="top_image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
-		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title">'+details+'<div>');
-		cavani_tm_data_images();
-		return false;
-	});
-	closePopup.on('click',function(){
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		return false;
-	});
-}
-
-// -------------------------------------------------
-// ----------------  NEWS POPUP  -------------------
-// -------------------------------------------------
-
-function cavani_tm_news_popup(){
-	
-	"use strict";
-	
-	var modalBox		= jQuery('.cavani_tm_modalbox');
-	var button			= jQuery('.cavani_tm_news .cavani_tm_full_link,.cavani_tm_news .news_list ul li .metabox .title a');
-	var closePopup		= modalBox.find('.close');
-	
-	button.on('click',function(){
-		var element 	= jQuery(this);
-		var parent 		= element.closest('.list_inner');
-		var content 	= parent.find('.news_hidden_details').html();
-		var image		= element.closest('.list_inner').find('.image .main').data('img-url');
-		var category 	= parent.find('.metabox .category a').text();
-		var title	 	= parent.find('.metabox .title a').text();
-		modalBox.addClass('opened');
-		modalBox.find('.description_wrap').html(content);
-		modalBox.find('.news_popup_informations').prepend('<div class="image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
-		modalBox.find('.news_popup_informations .image').after('<div class="details"><span>'+category+'</span><h3>'+title+'</h3><div>');
-		cavani_tm_data_images();
-		return false;
-	});
-	closePopup.on('click',function(){
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		return false;
-	});
-}
-
 // -----------------------------------------------------
 // ---------------   PRELOADER   -----------------------
 // -----------------------------------------------------
 
-function cavani_tm_preloader(){
+function preloader(){
 	
 	"use strict";
 	
@@ -260,22 +111,22 @@ function cavani_tm_preloader(){
 }
 
 // -----------------------------------------------------
-// -----------------   MY LOAD    ----------------------
+// -----------------   INIT LOAD    ----------------------
 // -----------------------------------------------------
 
-function cavani_tm_my_load(){
+function init_load(){
 	
 	"use strict";
 	
 	var speed	= 500;
-	setTimeout(function(){cavani_tm_preloader();},speed);
+	setTimeout(function(){preloader();},speed);
 }
 
 // -----------------------------------------------------
 // ------------------   CURSOR    ----------------------
 // -----------------------------------------------------
 
-function cavani_tm_cursor(){
+function cursor(){
 	
     "use strict";
 	
@@ -299,119 +150,10 @@ function cavani_tm_cursor(){
 };
 
 // -----------------------------------------------------
-// ---------------    IMAGE TO SVG    ------------------
-// -----------------------------------------------------
-
-function cavani_tm_imgtosvg(){
-	
-	"use strict";
-	
-	jQuery('img.svg').each(function(){
-		
-		var jQueryimg 		= jQuery(this);
-		var imgClass		= jQueryimg.attr('class');
-		var imgURL			= jQueryimg.attr('src');
-
-		jQuery.get(imgURL, function(data) {
-			// Get the SVG tag, ignore the rest
-			var jQuerysvg = jQuery(data).find('svg');
-
-			// Add replaced image's classes to the new SVG
-			if(typeof imgClass !== 'undefined') {
-				jQuerysvg = jQuerysvg.attr('class', imgClass+' replaced-svg');
-			}
-
-			// Remove any invalid XML tags as per http://validator.w3.org
-			jQuerysvg = jQuerysvg.removeAttr('xmlns:a');
-
-			// Replace image with new SVG
-			jQueryimg.replaceWith(jQuerysvg);
-
-		}, 'xml');
-
-	});
-}
-
-// -----------------------------------------------------
-// --------------------   POPUP    ---------------------
-// -----------------------------------------------------
-
-function cavani_tm_popup(){
-	
-	"use strict";
-
-	jQuery('.gallery_zoom').each(function() { // the containers for all your galleries
-		jQuery(this).magnificPopup({
-			delegate: 'a.zoom', // the selector for gallery item
-			type: 'image',
-			gallery: {
-			  enabled:true
-			},
-			removalDelay: 300,
-			mainClass: 'mfp-fade'
-		});
-
-	});
-	jQuery('.popup-youtube, .popup-vimeo').each(function() { // the containers for all your galleries
-		jQuery(this).magnificPopup({
-			disableOn: 700,
-			type: 'iframe',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
-			fixedContentPos: false
-		});
-	});
-	
-	jQuery('.soundcloude_link').magnificPopup({
-	  type : 'image',
-	   gallery: {
-		   enabled: true, 
-	   },
-	});
-}
-
-// -------------------------------------------------
-// -----------------    PORTFOLIO    ---------------
-// -------------------------------------------------
-
-function cavani_tm_portfolio(){
-
-	"use strict";
-	
-	if(jQuery().isotope) {
-
-		// Needed variables
-		var filter		 = jQuery('.cavani_tm_portfolio .portfolio_filter ul');
-
-		if(filter.length){
-			// Isotope Filter 
-			filter.find('a').on('click', function(){
-				var element		= jQuery(this);
-				var selector 	= element.attr('data-filter');
-				var list		= element.closest('.cavani_tm_portfolio').find('.portfolio_list').children('ul');
-				list.isotope({ 
-					filter				: selector,
-					animationOptions	: {
-						duration			: 750,
-						easing				: 'linear',
-						queue				: false
-					}
-				});
-				
-				filter.find('a').removeClass('current');
-				element.addClass('current');
-				return false;
-			});	
-		}
-	}
-}
-
-// -----------------------------------------------------
 // ---------------   DATA IMAGES    --------------------
 // -----------------------------------------------------
 
-function cavani_tm_data_images(){
+function data_images(){
 	
 	"use strict";
 	
@@ -424,83 +166,6 @@ function cavani_tm_data_images(){
 	});
 }
 
-// -----------------------------------------------------
-// ----------------    CONTACT FORM    -----------------
-// -----------------------------------------------------
-
-function cavani_tm_contact_form(){
-	
-	"use strict";
-	
-	jQuery(".contact_form #send_message").on('click', function(){
-		
-		var name 		= jQuery(".contact_form #name").val();
-		var email 		= jQuery(".contact_form #email").val();
-		var message 	= jQuery(".contact_form #message").val();
-		var subject 	= jQuery(".contact_form #subject").val();
-		var success     = jQuery(".contact_form .returnmessage").data('success');
-	
-		jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-		//checking for blank fields	
-		if(name===''||email===''||message===''){
-			
-			jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-		}
-		else{
-			// Returns successful data submission message when the entered information is stored in database.
-			jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
-				
-				jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
-				
-				
-				if(jQuery(".contact_form .returnmessage span.contact_error").length){
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
-				}else{
-					jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-				}
-				
-				if(data===""){
-					jQuery("#contact_form")[0].reset();//To reset form fields on success
-				}
-				
-			});
-		}
-		return false; 
-	});
-}
-
-// -----------------------------------------------------
-// --------------    OWL CAROUSEL    -------------------
-// -----------------------------------------------------
-
- function cavani_tm_mycarousel(){
-	 
-	 "use strict";
-	 
-	 var carousel			= jQuery('.cavani_tm_about .testimonials .owl-carousel');
-	
-	carousel.owlCarousel({
-		loop: true,
-		items: 2,
-		lazyLoad: false,
-		margin: 30,
-		autoplay: true,
-		autoplayTimeout: 7000,
-		dots: false,
-		nav: false,
-		navSpeed: false,
-		responsive : {
-			0 : {
-				items: 1
-			},
-			768 : {
-				items: 2
-			}
-		}
-	});
-	 
- }
 
 // -----------------------------------------------------
 // -------------------    HASHTAG    -------------------
@@ -533,35 +198,4 @@ function currentLink(ccc,e){
 	e.parent().siblings().addClass('mleave');
 	ccc.css({left: (left-menuleft) + 'px',width: width + 'px'});
 	
-}
-
-// -------------------------------------------------
-// -------------  GLITCH  --------------------------
-// -------------------------------------------------
-
-$(".glitch").mgGlitch({
-	destroy: false,
-	glitch: true,
-	scale: true,
-	blend: true,
-	blendModeType: "hue",
-	glitch1TimeMin: 200,
-	glitch1TimeMax: 400,
-	glitch2TimeMin: 10,
-	glitch2TimeMax: 100
-});
-
-// -------------------------------------------------
-// -------------  RIPPLE  --------------------------
-// -------------------------------------------------
-
-function cavani_tm_ripple(){
-	
-	"use strict";
-
-	jQuery('#ripple').ripples({
-		resolution: 500,
-		dropRadius: 20,
-		perturbance: 0.04
-	});
 }
