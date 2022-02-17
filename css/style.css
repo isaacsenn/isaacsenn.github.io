@@ -707,7 +707,24 @@ h6 {font-size: 16px;}
 	margin-bottom: 30px;
 }
 .cavani_tm_contact .contact_info {
-	margin-top: 5px;
+	margin-top: 45px;
+}
+
+.cavani_tm_contact .contact_info * a {
+	color: #333;
+	text-decoration: underline dotted;
+	text-decoration-thickness: 1px;
+}
+
+.cavani_tm_contact .contact_info .indent {
+	margin-left: 20px;
+}
+
+.cavani_tm_contact .signature {
+	height: 300px;
+	width: 150px;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 /*---------------------------------------------------*/
@@ -859,7 +876,7 @@ h6 {font-size: 16px;}
 	.cavani_tm_mainpart .main_content {width: 65%;}
 	.particle_wrapper {display: none;}
 	.cavani_tm_mainpart {top: 50px;left: 0px;right: 0px;bottom: 0px;}
-	.cavani_tm_home .content {padding: 0px 20px 30px;}
+	.cavani_tm_home .content {padding: 0px 20px 40px;}
 	.cavani_tm_home .name {font-size: 60px;}
 	.cavani_tm_home .job {font-size: 22px;}
 	.cavani_tm_section .section_inner {padding: 25px 20px 0px 20px;}
