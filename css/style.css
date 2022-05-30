@@ -863,7 +863,7 @@ h6 {font-size: 16px;}
 	.cavani_tm_mainpart .main_content {width: 65%;}
 	.cavani_tm_section .section_inner {padding: 25px 20px 0px 60px;}
 }
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
 	.mouse-cursor {display: none;}
 	#preloader {display: none;}
 	.cavani_tm_topbar {display: block;}
@@ -874,7 +874,6 @@ h6 {font-size: 16px;}
 	.cavani_tm_section .section_inner:before {width: 20px;}
 	.cavani_tm_mainpart .author_image {width: 35%;}
 	.cavani_tm_mainpart .main_content {width: 65%;}
-	.particle_wrapper {display: none;}
 	.cavani_tm_mainpart {top: 50px;left: 0px;right: 0px;bottom: 0px;}
 	.cavani_tm_home .content {padding: 0px 20px 40px;}
 	.cavani_tm_home .name {font-size: 60px;}
@@ -883,6 +882,7 @@ h6 {font-size: 16px;}
 }
 
 @media (max-width: 800px) {
+	.particle_wrapper {display: none;}
 	.cavani_tm_mainpart .author_image {display: none;}
 	.cavani_tm_home .mobile_author_image {display: block;}
 	.cavani_tm_mainpart .main_content {width: 100%;}
