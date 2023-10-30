@@ -10,9 +10,10 @@
     <script type="text/javascript">
       const params = new URLSearchParams(window.location.search);
       const codeArray = [...params.keys()];
-      const code = codeArray[0];
+      const order = codeArray[0];
+      const bucket = codeArray[1];
       const iframe = document.getElementById('form');
-      iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSenlZK9zbnjgLPpABX6CruEk59759GSXPFG9T2YZEGJCv0-uQ/viewform?embedded=true&usp=pp_url&entry.1258081283=${code}`;
+      iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSenlZK9zbnjgLPpABX6CruEk59759GSXPFG9T2YZEGJCv0-uQ/viewform?embedded=true&usp=pp_url&entry.1258081283=${order}&entry.969591907=${bucket}`;
     </script>
   </body>
 </html>
