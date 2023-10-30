@@ -4,6 +4,12 @@
     <title>Title of the document</title>
   </head>
   <body>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenlZK9zbnjgLPpABX6CruEk59759GSXPFG9T2YZEGJCv0-uQ/viewform?embedded=true" width="640" height="740" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe id="form" width="640" height="740" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <script type="text/javascript">
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('');
+      const iframe = document.getElementById('form');
+      iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSenlZK9zbnjgLPpABX6CruEk59759GSXPFG9T2YZEGJCv0-uQ/viewform?embedded=true&usp=pp_url&entry.1258081283=${code}`;
+    </script>
   </body>
 </html>
